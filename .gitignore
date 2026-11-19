@@ -1,0 +1,46 @@
+node_modules/
+out/
+__pycache__/
+*.pyc
+analysis/models/
+analysis/work/
+audio/stems/
+audio/stems4/
+assets/prompts/_codex/
+.DS_Store
+docs/archive/
+refs/
+
+# 配音：环境、模型、下载缓存只在本机（tts/setup_tts.py 装），生成的音频不进仓库
+tts/.venv-*/
+tts/models/
+tts/.cache/
+tts/out/
+
+# 第三方参考代码按需拉取（tools/fetch_refs.py），只有清单进仓库
+third_party/*
+!third_party/README.md
+
+# 配乐库：独立环境和乐器采样只在本机（tools/audio/setup_audio.py、get_samples.py）
+tools/audio/.venv/
+tools/audio/samples/
+# Blender 渲的序列帧（tools/blender/render.py）
+assets/blender/
+
+# 参考视频和截图只在本机对照（别人的作品），不进仓库
+refs/**/*.mp4
+refs/**/*.mkv
+refs/**/*.webm
+refs/**/*.mov
+refs/**/*.m4a
+refs/**/*.flac
+
+# Blender: the rendered plates (blender/shots_*.py rebuild them), the downloaded models / textures / fonts
+# (blender/fetch_assets.py fetches them again, blender/make_inscriptions.py redraws the atlas)
+assets/blender/
+blender/models/
+blender/tex/
+blender/fonts/
+
+# 歌曲音频是别人的作品，不进仓库（自己放 audio/song.wav）
+audio/*.wav
